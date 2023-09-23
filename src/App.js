@@ -10,10 +10,13 @@ function App() {
    { id:'3', title : ' News tv',amount:"203.56",date:new Date (2022,6,11)},
    { id:'4',title : ' Extra',amount:"234.7",date:new Date (2019,4,8)},
   ];
-
+const addExpenseHandler = expense => {
+  console.log('In App.js');
+  console.log(expense);
+};
   return (
     <div>
-    <NewExpense/>
+    <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenseitem title={expenses[0].title} amount={expenses[0].amount} date={expenses[0].date}></Expenseitem>
       <Expenseitem title={expenses[1].title} amount={expenses[1].amount} date={expenses[1].date}></Expenseitem>
       <Expenseitem title={expenses[2].title} amount={expenses[2].amount} date={expenses[2].date}></Expenseitem>
